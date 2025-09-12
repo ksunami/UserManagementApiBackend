@@ -92,7 +92,8 @@ Swagger UI is enabled by default.
 
 📸 **Swagger Screenshot**  
 _Add screenshot here:_  
-`![Swagger UI](docs/swagger.png)`
+![Swagger UI](https://github.com/ksunami/UserManagementApiBackend/blob/main/docs/swagger.png)`
+
 
 ---
 
@@ -108,7 +109,8 @@ dotnet test
 
 📸 **Test Execution Screenshot**  
 _Add screenshot here:_  
-`![Test Results](docs/tests.png)`
+![Test Results](https://github.com/ksunami/UserManagementApiBackend/blob/main/docs/tests.png)`
+
 
 ---
 
