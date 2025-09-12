@@ -1,0 +1,148 @@
+### ✅ Get all users with valid token
+GET http://localhost:5029/api/users
+Authorization: Bearer my-secret-token-123
+Accept: application/json
+
+###
+
+### ❌ Get all users with missing token
+GET http://localhost:5029/api/users
+Accept: application/json
+
+###
+
+### ❌ Get all users with invalid token
+GET http://localhost:5029/api/users
+Authorization: Bearer wrong-token
+Accept: application/json
+
+###
+
+### ✅ Create a valid user
+POST http://localhost:5029/api/users
+Authorization: Bearer my-secret-token-123
+Content-Type: application/json
+
+{
+  "name": "Jane Doe",
+  "email": "jane.doe@example.com"
+}
+
+###
+
+### ❌ Create user with invalid email
+POST http://localhost:5029/api/users
+Authorization: Bearer my-secret-token-123
+Content-Type: application/json
+
+{
+  "name": "Invalid Email User",
+  "email": "not-an-email"
+}
+
+###
+
+### ❌ Create user with missing name
+POST http://localhost:5029/api/users
+Authorization: Bearer my-secret-token-123
+Content-Type: application/json
+
+{
+  "email": "missing.name@example.com"
+}
+
+###
+
+### ✅ Get user by valid ID
+GET http://localhost:5029/api/users/1
+Authorization: Bearer my-secret-token-123
+Accept: application/json
+
+###
+
+### ❌ Get user by non-existent ID
+GET http://localhost:5029/api/users/999
+Authorization: Bearer my-secret-token-123
+Accept: application/json
+
+###
+
+### ✅ Update existing user
+PUT http://localhost:5029/api/users/1
+Authorization: Bearer my-secret-token-123
+Content-Type: application/json
+
+{
+  "name": "Jane Updated",
+  "email": "jane.updated@example.com"
+}
+
+###
+
+### ❌ Update non-existent user
+PUT http://localhost:5029/api/users/999
+Authorization: Bearer my-secret-token-123
+Content-Type: application/json
+
+{
+  "name": "Ghost User",
+  "email": "ghost@example.com"
+}
+
+###
+
+### ❌ Update with invalid data
+PUT http://localhost:5029/api/users/1
+Authorization: Bearer my-secret-token-123
+Content-Type: application/json
+
+{
+  "name": "",
+  "email": "invalid-email"
+}
+
+###
+
+### ✅ Delete existing user
+DELETE http://localhost:5029/api/users/1
+Authorization: Bearer my-secret-token-123
+
+###
+
+### ❌ Delete non-existent user
+DELETE http://localhost:5029/api/users/999
+Authorization: Bearer my-secret-token-123
+
+###
+
+### 🧨 Trigger unhandled exception (for testing)
+GET http://localhost:5029/api/users/throw
+Authorization: Bearer my-secret-token-123
+Accept: application/json
+
+###
+
+### 🚫 Simulate rate limit breach (burst requests)
+GET http://localhost:5029/api/users
+Authorization: Bearer my-secret-token-123
+Accept: application/json
+
+###
+GET http://localhost:5029/api/users
+Authorization: Bearer my-secret-token-123
+Accept: application/json
+
+###
+GET http://localhost:5029/api/users
+Authorization: Bearer my-secret-token-123
+Accept: application/json
+
+###
+GET http://localhost:5029/api/users
+Authorization: Bearer my-secret-token-123
+Accept: application/json
+
+###
+GET http://localhost:5029/api/users
+Authorization: Bearer my-secret-token-123
+Accept: application/json
