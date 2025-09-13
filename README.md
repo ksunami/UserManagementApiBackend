@@ -91,7 +91,6 @@ Swagger UI is enabled by default.
 - or [https://localhost:5001/swagger](https://localhost:5001/swagger)
 
 📸 **Swagger Screenshot**  
-_Add screenshot here:_  
 ![Swagger UI](https://github.com/ksunami/UserManagementApiBackend/blob/main/docs/swagger.png)`
 
 
@@ -108,7 +107,6 @@ dotnet test
 ```
 
 📸 **Test Execution Screenshot**  
-_Add screenshot here:_  
 ![Test Results](https://github.com/ksunami/UserManagementApiBackend/blob/main/docs/tests.png)`
 
 
