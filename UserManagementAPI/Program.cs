@@ -34,11 +34,13 @@ builder.Services.Configure<RateLimitingOptions>(
 
 var app = builder.Build();
 
-app.UseMiddleware<UserApi.Middleware.ExceptionHandlingMiddleware>();
+app.UseMiddleware<UserApi.Middleware.ExceptionHandlingMiddleware>();         // 🔴 First: catch all exceptions
 
-app.UseMiddleware<UserApi.Middleware.AuthenticationMiddleware>();
+app.UseMiddleware<UserApi.Middleware.RateLimitingMiddleware>();              // ⏱️ Second: block abusive traffic early
 
-app.UseMiddleware<UserApi.Middleware.RequestResponseLoggingMiddleware>();
+app.UseMiddleware<UserApi.Middleware.AuthenticationMiddleware>();            // 🔐 Third: validate token after rate check
+
+app.UseMiddleware<UserApi.Middleware.RequestResponseLoggingMiddleware>();   // 📝 Fourth: log requests and responses
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
